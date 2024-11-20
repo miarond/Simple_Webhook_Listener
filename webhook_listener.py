@@ -58,7 +58,7 @@ if __name__ == '__main__':
     
     # By default, Flask runs on port 5000 on the loopback IP (127.0.0.1)
     port = 5000
-    while is_port_in_use(port):
+    while is_port_in_use(port) and port <= 65535:
         port += 1
     print(f'==========================\n= \033[1mLISTENING ON PORT {port}\033[0m =\n==========================\n')
     if args.ssl:
